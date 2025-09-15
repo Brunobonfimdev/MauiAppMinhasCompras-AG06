@@ -1,126 +1,42 @@
-# 🛒 Aplicativo Minhas Compras (.NET MAUI)
+MauiAppMinhasCompras - Agenda 6
+Repositório do aplicativo de controle de compras desenvolvido para a Agenda 06 da disciplina Desenvolvimento de Sistemas III do curso Técnico em Desenvolvimento de Sistemas.
 
-![.NET 9](https://img.shields.io/badge/.NET-9.0-blueviolet)
-![MAUI](https://img.shields.io/badge/Mobile-MAUI-ff69b4)
-![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
-![License](https://img.shields.io/badge/Licença-MIT-blue)
+Este projeto consiste em um aplicativo multiplataforma para cadastro e gerenciamento de uma lista de compras, aplicando conceitos de persistência de dados local, interface de usuário moderna e manipulação de listas dinâmicas.
 
-**Repositório do aplicativo de controle de compras** desenvolvido para a **Agenda 6** da disciplina *Desenvolvimento de Sistemas III* do curso Técnico em Desenvolvimento de Sistemas.
+🎯 Objetivo do Projeto
+O objetivo principal desta atividade era desenvolver um aplicativo CRUD (Criar, Ler, Atualizar, Deletar) funcional utilizando .NET MAUI. O sistema deveria permitir ao usuário gerenciar uma lista de produtos, armazenando os dados localmente para que as informações não se perdessem ao fechar o aplicativo.
 
-Aplicativo para **cadastro e visualização de produtos**, permitindo registrar nome, quantidade, preço, com listagem organizada, seleção de categoria e design moderno.
+✨ Recursos Implementados (Requisitos da Agenda)
+Para atender aos requisitos da atividade, as seguintes funcionalidades e tecnologias foram implementadas:
 
-✔ **Interface intuitiva e responsiva**
+✅ Entrada de Dados: Utilização de componentes Entry para a inserção de nome, quantidade, preço e categoria do produto.
 
-✔ **Cadastro rápido de produtos**
+✅ Listagem Dinâmica: Exibição dos produtos cadastrados em uma CollectionView, que se atualiza automaticamente.
 
-✔ **Lista dinâmica com visual limpo e polido**
+✅ Layout Moderno: A interface foi construída com Frames, cores e sombras para criar um visual limpo, agradável e polido.
 
-✔ **Compatível com Android, iOS e Windows**
+✅ Design Responsivo: A interface se adapta a diferentes tamanhos de tela, garantindo a compatibilidade com dispositivos Android, iOS e Windows.
 
-✔ **Relatório inteligente de gastos por categoria**
+✅ Persistência de Dados com SQLite: Implementação de um banco de dados SQLite para armazenar, consultar, atualizar e deletar os produtos de forma local no dispositivo.
 
----
+✅ Ações de Contexto: Uso de ContextActions na ListView para permitir que o usuário edite e remova itens da lista com um simples gesto (arrastar ou clique longo).
 
-## 📝 Descrição do Projeto
+✅ Confirmação de Ações: Utilização de DisplayAlert para solicitar a confirmação do usuário antes de excluir um item, evitando remoções acidentais.
 
-Sistema de controle simples para gerenciar uma lista de compras com as seguintes funcionalidades:
+✅ Navegação para Edição: Implementação do evento ItemSelected para navegar para uma nova tela (ou modificar a tela atual) com os dados do item selecionado, permitindo sua edição.
 
-* **Cadastro de produtos** (nome, quantidade, preço e categoria)
-* **Listagem com visual moderno**
-* **Armazenamento local utilizando SQLite**
+✅ Atualização da Lista: Adicionado o recurso de "Puxar para Atualizar" (Pull to Refresh) para recarregar a lista de produtos do banco de dados.
 
----
+✅ Filtros e Relatórios:
 
-## ✨ Recursos Implementados
+Filtro por Categoria: Adicionado um componente Picker para que o usuário possa filtrar e visualizar produtos de uma categoria específica.
 
-✅ **Entrada de dados com Entry** para nome, quantidade e preço e categoria
+Relatório de Gastos: Criação de uma funcionalidade que calcula e exibe o total gasto em cada categoria, oferecendo um resumo financeiro inteligente.
 
-✅ **Lista de produtos utilizando CollectionView**
+🛠️ Tecnologias Utilizadas
+Tecnologia	Finalidade
+.NET MAUI	Framework principal para o desenvolvimento do aplicativo multiplataforma.
+C#	Linguagem de programação utilizada para toda a lógica do aplicativo, regras de negócio e acesso aos dados.
+XAML	Linguagem de marcação para a construção declarativa da interface do usuário e do layout das telas.
+SQLite	Sistema de banco de dados leve e embarcado, utilizado para a persistência dos dados localmente no dispositivo.
 
-✅ **Layout moderno com Frames, cores e sombras**
-
-✅ **Design responsivo e adaptado para dispositivos móveis**
-
-✅ **Persistência de dados com banco SQLite**
-
-✅ **ListView com ContextActions** para editar e remover itens 
-
-✅ **Confirmação de exclusão com DisplayAlert**  
-
-✅ **Evento ItemSelected** para navegar para tela de edição  
-
-✅ **Refresh automático (Pull to Refresh)**  
-
-✅ **Filtros por categoria utilizando Picker**
-
-✅ **Relatório de gastos por categoria, exibindo o total gasto em cada tipo de produto**
-
----
-
-## 🛠 Tecnologias Utilizadas
-
-* **Front-end**: XAML (MAUI)
-* **Back-end**: C# (lógica e persistência de dados)
-* **Banco de dados**: SQLite
-* **Plataforma**: .NET MAUI (Multi-platform App UI)
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-MauiAppMinhasCompras/  
-├── Helpers/  
-│   ├── SQLiteDatabaseHelper.cs  # Classe para manipulação do banco SQLite  
-├── Models/  
-│   ├── Produto.cs               # Modelo de dados do produto  
-├── MainPage.xaml                 # Tela principal com cadastro e lista  
-├── App.xaml                      # Configurações globais e recursos  
-└── README.md                     # Esta documentação  
-```
-
----
-
-## 🚀 Como Executar
-
-1. **Pré-requisitos**:
-
-   * .NET 9.0 SDK instalado
-   * Visual Studio 2022 ou superior (com suporte ao MAUI)
-
-2. **Clone o repositório**:
-
-   ```bash
-   git clone https://github.com/seuusuario/MauiAppMinhasCompras.git
-   ```
-
-3. **Restaure os pacotes e execute o projeto**:
-
-   ```bash
-   dotnet build
-   dotnet run --project MauiAppMinhasCompras
-   ```
-
-4. **Teste no emulador Android, iOS ou Windows**
-
----
-
-## 🎥 Demonstração do App
-
-Assista ao vídeo demonstrando o funcionamento do aplicativo no YouTube:
-
-<a href="https://youtu.be/UqvdKK3-APE" target="_blank">Clique aqui para ver o vídeo!</a>
-
----
-
-## 📌 Informações Acadêmicas
-
-| Item           | Detalhe                                   |
-| -------------- | ----------------------------------------- |
-| **Disciplina** | Desenvolvimento de Sistemas III            |
-| **Curso**      | Técnico em Desenvolvimento de Sistemas    |
-| **Objetivo**   | Sistema de cadastro e listagem de compras |
-
----
-
-> 💡 **Dica**: personalize as cores e estilos no arquivo `Styles.xaml` para deixar o app com a identidade visual da sua preferência.
